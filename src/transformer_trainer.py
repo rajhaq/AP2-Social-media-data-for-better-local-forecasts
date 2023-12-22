@@ -1,19 +1,17 @@
 import transformers
-import datasets
 import sklearn.metrics
 import functools
-import numpy as np
 import os
+
 
 def get_model(params, db_config_base, model_nm):
     db_config = db_config_base
     if params is not None:
         db_config.update({"cls_dropout": params["cls_dropout"]})
     db_config.update({"num_labels": 2})
-    model = transformers.AutoModelForSequenceClassification.from_pretrained(
-        model_nm, config=db_config
-    )
+    model = transformers.AutoModelForSequenceClassification.from_pretrained(model_nm, config=db_config)
     return model
+
 
 def compute_metrics(eval_pred):
     predictions, labels = eval_pred
@@ -24,9 +22,11 @@ def compute_metrics(eval_pred):
     f1_not_raining = classification_report["not raining"]["f1-score"]
     f1_raining = classification_report["raining"]["f1-score"]
     return {"f1_not_raining": f1_not_raining, "f1_raining": f1_raining}
-def get_trainer(dataset, db_config_base, model_nm, FOLDER_TO_OUTPUT, parameters, tokenizer):
+
+
+def get_trainer(dataset, db_config_base, model_nm, folder_to_output, parameters, tokenizer):
     args = transformers.TrainingArguments(
-        FOLDER_TO_OUTPUT,
+        folder_to_output,
         learning_rate=parameters["learning_rate"],
         warmup_ratio=parameters["warmup_ratio"],
         lr_scheduler_type=parameters["lr_scheduler_type"],
@@ -41,9 +41,7 @@ def get_trainer(dataset, db_config_base, model_nm, FOLDER_TO_OUTPUT, parameters,
         save_strategy="epoch",
         load_best_model_at_end=True,
     )
-    get_model_partial = functools.partial(
-        get_model, db_config_base=db_config_base, model_nm=model_nm
-    )
+    get_model_partial = functools.partial(get_model, db_config_base=db_config_base, model_nm=model_nm)
     return transformers.Trainer(
         model_init=get_model_partial,
         args=args,
@@ -53,8 +51,9 @@ def get_trainer(dataset, db_config_base, model_nm, FOLDER_TO_OUTPUT, parameters,
         compute_metrics=compute_metrics,
     )
 
-def run_training(parameters, model_nm, dataset, FOLDER_TO_OUTPUT, tokenizer):
+
+def run_training(parameters, model_nm, dataset, folder_to_output, tokenizer):
     db_config_base = transformers.AutoConfig.from_pretrained(model_nm)
-    os.makedirs(FOLDER_TO_OUTPUT, exist_ok=True)
-    trainer = get_trainer(dataset, db_config_base, model_nm, FOLDER_TO_OUTPUT, parameters, tokenizer)
+    os.makedirs(folder_to_output, exist_ok=True)
+    trainer = get_trainer(dataset, db_config_base, model_nm, folder_to_output, parameters, tokenizer)
     trainer.train()

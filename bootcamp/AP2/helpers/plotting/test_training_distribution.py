@@ -1,7 +1,19 @@
 import matplotlib.pyplot as plt
 import xarray as xr
 
-def plot_label_distribution_split(data, split_indices, column='Label', bins=20, colors=['blue', 'green'], alpha=0.7, titles=['Training Set Label Distribution', 'Test Set Label Distribution'], x_label='Label', y_label='Frequency', figsize=(12, 6)):
+
+def plot_label_distribution_split(
+    data,
+    split_indices,
+    column="Label",
+    bins=20,
+    colors=["blue", "green"],
+    alpha=0.7,
+    titles=["Training Set Label Distribution", "Test Set Label Distribution"],
+    x_label="Label",
+    y_label="Frequency",
+    figsize=(12, 6),
+):
     """
     Plot label distribution for training and test sets.
 
@@ -36,6 +48,7 @@ def plot_label_distribution_split(data, split_indices, column='Label', bins=20, 
     plt.tight_layout()
     plt.show()
 
+
 # Example usage:
 # Assuming data is a dictionary containing xarray DataArrays or numpy arrays and indices_train and indices_test are keys or column names
 # data = ...
@@ -43,4 +56,4 @@ def plot_label_distribution_split(data, split_indices, column='Label', bins=20, 
 # indices_test = ...
 
 # Call the function to plot the label distribution of training and test sets
-#plot_label_distribution_split(data, [indices_train, indices_test], column='label_column', bins=20, colors=['blue', 'green'], titles=['Training Set Label Distribution', 'Test Set Label Distribution'], x_label='My X Label', y_label='My Y Label', figsize=(12, 6))
+# plot_label_distribution_split(data, [indices_train, indices_test], column='label_column', bins=20, colors=['blue', 'green'], titles=['Training Set Label Distribution', 'Test Set Label Distribution'], x_label='My X Label', y_label='My Y Label', figsize=(12, 6))

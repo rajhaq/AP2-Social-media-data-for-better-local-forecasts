@@ -58,12 +58,8 @@ def plot_histogram_2d(
     if np.sum(np.isnan(y.astype(float))) > 0:
         raise ValueError("found nan-values in y")
     if np.shape(x) != np.shape(y):
-        raise Exception(
-            f"x and y need to be of same shape: {np.shape(x)} != {np.shape(y)}"
-        )
-    fig, ax = plotting.utils_plotting.create_figure_axes(
-        fig=fig, ax=ax, font_size=font_size
-    )
+        raise Exception(f"x and y need to be of same shape: {np.shape(x)} != {np.shape(y)}")
+    fig, ax = plotting.utils_plotting.create_figure_axes(fig=fig, ax=ax, font_size=font_size)
     if not isinstance(log, list):
         log = [log, log]
     if not isinstance(n_bins, list):
@@ -72,9 +68,7 @@ def plot_histogram_2d(
         xlim = [xlim, xlim]
     if not isinstance(ylim, list):
         ylim = [ylim, ylim]
-    n_bins = [
-        x + 1 if x is not None else x for x in n_bins
-    ]  # using bin edges later, where n_edges = n_bins + 1
+    n_bins = [x + 1 if x is not None else x for x in n_bins]  # using bin edges later, where n_edges = n_bins + 1
     if not isinstance(linear_thresh, list):
         linear_thresh = [linear_thresh, linear_thresh]
     if bins is None:
@@ -156,9 +150,7 @@ def plot_histogram(
     if not isinstance(log, list):
         log = [log, log]
 
-    fig, ax = plotting.utils_plotting.create_figure_axes(
-        fig=fig, ax=ax, font_size=font_size
-    )
+    fig, ax = plotting.utils_plotting.create_figure_axes(fig=fig, ax=ax, font_size=font_size)
     if bin_edges is None:
         bin_edges, linear_thresh = get_bin_edges(
             data=x,
@@ -219,25 +211,15 @@ def get_bin_edges(
     if data is not None:
         vmax = np.max(data)
     if vmin is None or vmax is None:
-        raise Exception(
-            f"Need to specify vmin {vmin} and {vmax} or provide data: {data}!"
-        )
+        raise Exception(f"Need to specify vmin {vmin} and {vmax} or provide data: {data}!")
     if not log:
         bins = np.linspace(vmin, vmax, n_bins)
     elif log == "symlog":
         if linear_thresh is None:
             abs_max = abs(vmax)
             abs_min = abs(vmin)
-            linear_thresh = (
-                abs_min
-                if abs_min < abs_max or abs_min == 0
-                else abs_max
-                if abs_max != 0
-                else abs_min
-            )
-            logging.info(
-                f"Setting: linear_thresh: {linear_thresh} with vmin: {vmin} and vmax: {vmax}!"
-            )
+            linear_thresh = abs_min if abs_min < abs_max or abs_min == 0 else abs_max if abs_max != 0 else abs_min
+            logging.info(f"Setting: linear_thresh: {linear_thresh} with vmin: {vmin} and vmax: {vmax}!")
         bins = _get_bin_edges_symlog(vmin, vmax, linear_thresh, n_bins=n_bins)
     else:
         bins = 10 ** np.linspace(np.log10(vmin), np.log10(vmax), n_bins)
@@ -292,9 +274,7 @@ def _get_bin_edges_symlog(
                         endpoint=False,
                     )
                 ),
-                np.linspace(
-                    -linear_thresh, linear_thresh, n_bins_linear, endpoint=False
-                ),
+                np.linspace(-linear_thresh, linear_thresh, n_bins_linear, endpoint=False),
                 10 ** np.linspace(np.log10(linear_thresh), np.log10(vmax), n_bins // 2),
             )
         )
@@ -322,9 +302,7 @@ def plot_distribution_keywords(array_text, keywords):
         occurence.append(text.count(k))
 
     fig, axs = plt.subplots(2, 1, figsize=(20, 10), constrained_layout=True)
-    for i, (log, title) in enumerate(
-        zip([True, False], ["Logarithmic y-axis", "Linear y-axis"])
-    ):
+    for i, (log, title) in enumerate(zip([True, False], ["Logarithmic y-axis", "Linear y-axis"])):
         ax = axs[i]
         plot = ax.bar(np.arange(len(occurence)), occurence)
         labels = ["{}".format(x) for x in keywords_extended]
