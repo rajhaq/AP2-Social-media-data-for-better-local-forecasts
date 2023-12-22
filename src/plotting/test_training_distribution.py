@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import xarray as xr
-from plot import plot
+from plot import adjust_plot
 
 
 def plot_label_distribution_split(
@@ -41,11 +41,10 @@ def plot_label_distribution_split(
 
         plt.subplot(1, len(split_indices), i + 1)
         plt.hist(data_array[column], bins=bins, color=colors[i], alpha=alpha)
-        plot(titles[i], x_label, y_label)
+        adjust_plot(titles[i], x_label, y_label)
 
     # Display the plots
     plt.tight_layout()
-    plt.show()
 
 
 # Example usage:

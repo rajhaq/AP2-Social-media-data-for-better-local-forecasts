@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def plot(title, xlabel="X", ylabel="Y", legend_loc=None):
+def adjust_plot(title, xlabel="X", ylabel="Y", legend_loc=None):
     """
     Plots a confusion matrix with labels for false positive rate and true positive rate.
 
@@ -13,7 +13,6 @@ def plot(title, xlabel="X", ylabel="Y", legend_loc=None):
     plt.title(title)
     if legend_loc is not None:
         plt.legend(loc=legend_loc)
-    plt.show()  # This would display the plot
 
 
 # Example usage:

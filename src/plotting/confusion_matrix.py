@@ -1,7 +1,7 @@
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
-from plot import plot
+from plot import adjust_plot
 
 
 def plot_confusion_matrix(
@@ -42,7 +42,7 @@ def plot_confusion_matrix(
         xticklabels=labels,
         yticklabels=labels,
     )
-    plot(title, "Predicted Label", "True Label")
+    adjust_plot(title, "Predicted Label", "True Label")
 
 
 # Example usage:

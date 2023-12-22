@@ -1,5 +1,5 @@
 import seaborn as sns
-from plot import plot
+from plot import adjust_plot
 
 
 def plot_numeric_distribution(
@@ -11,7 +11,7 @@ def plot_numeric_distribution(
     y_label="Frequency",
 ):
     sns.histplot(df[column].apply(len), bins=bins)
-    plot(title, x_label, y_label)
+    adjust_plot(title, x_label, y_label)
 
 
 # Example usage:
