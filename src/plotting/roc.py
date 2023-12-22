@@ -1,5 +1,6 @@
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
+from plot import plot
 
 
 def plot_roc_curve(
@@ -43,6 +44,7 @@ def plot_roc_curve(
     plt.title(title)
     plt.legend(loc=legend_loc)
     plt.show()
+    plot(title, "False Positive Rate", "True Positive Rate", loc=legend_loc)
 
 
 # Example usage:

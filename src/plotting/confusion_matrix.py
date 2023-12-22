@@ -1,6 +1,7 @@
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
+from plot import plot
 
 
 def plot_confusion_matrix(
@@ -41,11 +42,7 @@ def plot_confusion_matrix(
         xticklabels=labels,
         yticklabels=labels,
     )
-
-    plt.title(title)
-    plt.xlabel("Predicted Label")
-    plt.ylabel("True Label")
-    plt.show()
+    plot(title, "Predicted Label", "True Label")
 
 
 # Example usage:
