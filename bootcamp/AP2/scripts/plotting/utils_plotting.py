@@ -6,9 +6,7 @@ from matplotlib import pyplot as plt
 def set_x_log(ax, log=False, linear_thresh=None):
     if log == "symlog":
         if linear_thresh is None:
-            raise ValueError(
-                f"If log=='symlog', setting linear_thresh: {linear_thresh} required!"
-            )
+            raise ValueError(f"If log=='symlog', setting linear_thresh: {linear_thresh} required!")
         ax.set_xscale("symlog", linthresh=linear_thresh)
     elif log:
         ax.set_xscale("log")
@@ -18,9 +16,7 @@ def set_x_log(ax, log=False, linear_thresh=None):
 def set_y_log(ax, log=False, linear_thresh=None):
     if log == "symlog":
         if linear_thresh is None:
-            raise ValueError(
-                f"If log=='symlog', setting linear_thresh: {linear_thresh} required!"
-            )
+            raise ValueError(f"If log=='symlog', setting linear_thresh: {linear_thresh} required!")
         ax.set_yscale("symlog", linthresh=linear_thresh)
     elif log:
         ax.set_yscale("log")

@@ -1,0 +1,35 @@
+[tool.flake8]
+max-line-length = 600
+per-file-ignores = [
+    "__init__.py:F401,E501",
+    "training_deep500.py:F403,F405",
+    "training_performance.py:F403,F405",
+    "scripts/relevance_dataset_generation/mlflow_projects/generate_relevance_labels.py:E501",
+]
+exclude = [
+    'bootcamp/*',
+    '**/cachedir/*',
+    '**/.venv/*',
+    'src/a2/training/tracking_hugging.py',
+    'src/a2/training/training_performance.py',
+    'src/a2/training/training_deep500.py',
+    'src/tests/unit/twitter/test_locations.py',
+]
+[tool.black]
+line-length = 120
+
+
+[tool.vulture]
+min_confidence = 80
+paths = ['src/']
+exclude = [
+    '**/cachedir/*',
+    '**/.venv/*',
+    'src/a2/training/tracking_hugging.py',
+    'src/a2/training/training_performance.py',
+    'src/a2/training/training_deep500.py',
+    'src/tests/unit/twitter/test_locations.py',
+]
+ignore_names = ["control", "gpu"]
+sort_by_size = true
+verbose = false

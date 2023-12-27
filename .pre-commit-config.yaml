@@ -1,0 +1,50 @@
+default_language_version:
+  python: python3.10
+
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        language_version: python3.10
+        files: (a2|tests)
+
+  - repo: https://github.com/ambv/black
+    rev: 23.7.0
+    hooks:
+      - id: black-jupyter
+
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.6.1
+    hooks:
+      - id: nbstripout
+
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.10.0
+    hooks:
+      - id: reorder-python-imports
+        files: (a2|tests)
+
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: v2.7
+    hooks:
+      - id: vulture
+
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v1.4.1
+  #   hooks:
+  #   -   id: mypy
+  #       args: [--ignore-missing-imports]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=775"]
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - Flake8-pyproject

@@ -1,7 +1,6 @@
 import logging
 import pathlib
 import re
-import string
 
 import dataset_bootcamp
 import numpy as np
@@ -430,15 +429,11 @@ def get_emojis_and_dictionary(scope="all", keywords=None):
     if scope == "all":
         emojis = "".join(df_emoji.emoji.values)
         emojis_dic = {
-            k: v
-            for k, v in zip(df_emoji.emoji.values, df_emoji.name.values)
-            if k not in ["*️⃣", "*⃣"]
+            k: v for k, v in zip(df_emoji.emoji.values, df_emoji.name.values) if k not in ["*️⃣", "*⃣"]
         }  # latter cause error for re.sub
     elif scope == "keywords":
         if keywords is None:
-            raise ValueError(
-                f"Need to specify keywords: {keywords} to filter emoji dic!"
-            )
+            raise ValueError(f"Need to specify keywords: {keywords} to filter emoji dic!")
         df_emoji_include_keywords = df_emoji.loc[
             df_emoji.name.str.contains("|".join([r"\b%s\b" % x for x in keywords]))
         ]
@@ -491,25 +486,18 @@ class Normalizer:
             keywords = utils_bootcamp.get_keywords_default()
         self.keywords = keywords
         self.keywords_hashtag_dict = {f"#{k}": k for k in keywords}
-        self.emojis, self.emojis_dic = get_emojis_and_dictionary(
-            scope="keywords", keywords=self.keywords
-        )
+        self.emojis, self.emojis_dic = get_emojis_and_dictionary(scope="keywords", keywords=self.keywords)
         # taken from https://stackoverflow.com/questions/51102201/replace-a-string-using-dictionary-regex
         self.emojis_replace_pattern = re.compile(
             r"(" + r"|".join(re.escape(key) for key in self.emojis_dic.keys()) + r")",
             flags=re.UNICODE,
         )
         self.keywords_replace_pattern = re.compile(
-            r"("
-            + r"|".join(re.escape(key) for key in self.keywords_hashtag_dict.keys())
-            + r")",
+            r"(" + r"|".join(re.escape(key) for key in self.keywords_hashtag_dict.keys()) + r")",
             flags=re.IGNORECASE,
         )
         self.stopword_single_occurence_pattern = re.compile(
-            r"([\s+"
-            + r"".join(re.escape(key) for key in PUNCTUATIONS)
-            + r"]"
-            + r"{2,})",
+            r"([\s+" + r"".join(re.escape(key) for key in PUNCTUATIONS) + r"]" + r"{2,})",
             flags=re.UNICODE,
         )
 
@@ -548,9 +536,7 @@ class Normalizer:
                 sentence = remove_instagram_atsign(sentence)
                 sentence = remove_instagram_abbreviation(sentence)
             if replace_keyword_emojis:
-                sentence = replace_emojis(
-                    sentence, self.emojis_dic, pattern=self.emojis_replace_pattern
-                )
+                sentence = replace_emojis(sentence, self.emojis_dic, pattern=self.emojis_replace_pattern)
             sentence = replace_hashtags_keywords(
                 sentence,
                 self.keywords_hashtag_dict,
@@ -562,9 +548,7 @@ class Normalizer:
             sentence = remove_newlines(sentence)
             sentence = remove_urls(sentence)
             if remove_punctuations:
-                sentence = remove_punctutations_func(
-                    sentence, method=remove_punctuations
-                )
+                sentence = remove_punctutations_func(sentence, method=remove_punctuations)
             if ignore_non_ascii:
                 sentence = remove_non_ascii_characters(sentence)
             if reduce_punctuations:
@@ -642,10 +626,7 @@ def normalize_text_dataset(
     index_max = ds.index.shape[0]
     indices = np.linspace(0, index_max, 24, dtype=int)
 
-    if (
-        key_text_normalized is not None
-        and key_text_normalized not in ds.variables.keys()
-    ):
+    if key_text_normalized is not None and key_text_normalized not in ds.variables.keys():
         ds[key_text_normalized] = (
             ["index"],
             np.full_like(ds["index"].values, "", dtype=object),
@@ -691,14 +672,9 @@ def filter_text_dataset(
             ds[key_text].str.contains("|".join(keywords), flags=re.IGNORECASE),
             drop=True,
         )
-    if (
-        maximum_bounding_box_area is not None
-        and "bounding_box_area" in ds.variables.keys()
-    ):
+    if maximum_bounding_box_area is not None and "bounding_box_area" in ds.variables.keys():
         ds = ds.where(
-            ds["bounding_box_area"]
-            < maximum_bounding_box_area
-            | utils_bootcamp.is_nan(ds, "bounding_box_area"),
+            ds["bounding_box_area"] < maximum_bounding_box_area | utils_bootcamp.is_nan(ds, "bounding_box_area"),
             drop=True,
         )
     return ds

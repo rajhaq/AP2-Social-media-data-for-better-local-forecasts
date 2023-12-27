@@ -35,9 +35,7 @@ def classification_report(labels, predictions, target_names=None, output_dict=Tr
     return report
 
 
-def check_prediction(
-    truth, prediction, filename=None, normalize="all", output_dict=False
-):
+def check_prediction(truth, prediction, filename=None, normalize="all", output_dict=False):
     import sklearn
 
     report = classification_report(
@@ -47,9 +45,7 @@ def check_prediction(
         output_dict=output_dict,
     )
     cm = sklearn.metrics.confusion_matrix(truth, prediction, normalize=normalize)
-    disp = sklearn.metrics.ConfusionMatrixDisplay(
-        confusion_matrix=cm, display_labels=["not raining", "raining"]
-    )
+    disp = sklearn.metrics.ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["not raining", "raining"])
     disp.plot()
     ax = plt.gca()
     ax.tick_params(axis="x", labelrotation=0)

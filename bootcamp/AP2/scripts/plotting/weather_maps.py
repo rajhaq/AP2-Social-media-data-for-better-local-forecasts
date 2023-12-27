@@ -58,13 +58,9 @@ def plot_precipiation_map(
             ds_tweets[time].values,
         )
     ):
-        for i_time, dt in enumerate(
-            np.arange(-1 * delta_time * n_time, delta_time * (n_time + 1), delta_time)
-        ):
+        for i_time, dt in enumerate(np.arange(-1 * delta_time * n_time, delta_time * (n_time + 1), delta_time)):
             ax = axes[i_tweet, i_time]
-            time_to_plot = pd.to_datetime(time) + pd.Timedelta(
-                f"{dt}{delta_time_units}"
-            )
+            time_to_plot = pd.to_datetime(time) + pd.Timedelta(f"{dt}{delta_time_units}")
             if add_time_before_plot:
                 time_to_plot = time_to_plot + add_time_before_plot
             ds_precipitation["tp"].loc[f"{time_to_plot}"].plot(
