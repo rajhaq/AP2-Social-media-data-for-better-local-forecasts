@@ -1,0 +1,251 @@
+
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "Tweet 51", "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "Tweet 52", "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "Tweet 53", "content":... 
+] 
+
+Result: [ { "tweet": 51, "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 }, { "tweet": 52, "content": "Boris likes
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":... 
+] 
+
+Result: [ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":... 
+] 
+
+Result: [ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet 51: "The sound of rain tapping on the window" 
+Tweet 52: "Boris likes drinking water".
+Tweet 53: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":... 
+] 
+
+Result: [ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet: "The sound of rain tapping on the window" 
+Tweet: "Boris likes drinking water".
+Tweet: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":... 
+] 
+
+Result: [ { "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":
+Read below Tweets and tell me if they say that it is raining or sunny. It should be rainy or sunny now.
+Format your answer in a human readable way,
+
+Tweets:
+Tweet: "The sound of rain tapping on the window" 
+Tweet: "Boris likes drinking water".
+Tweet: "Rain is my imaginary love language, it rains always in my eyes"
+
+Return the results in a json file like: [ 
+{ "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },  
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":... 
+] 
+
+Result: [ { "content": "The sound of rain tapping on the window", "explanation": "The sound of rain heard implies that is raining.", "score": 0.9 },
+{ "content": "Boris likes drinking water", "explanation": "The Tweet does not mention any information related to presence of rain or sun.", "score": 0.1},
+{ "content":
