@@ -5,6 +5,7 @@ per-file-ignores = [
     "training_deep500.py:F403,F405",
     "training_performance.py:F403,F405",
     "scripts/relevance_dataset_generation/mlflow_projects/generate_relevance_labels.py:E501",
+    "batch/falconTweet.py:E203", 
 ]
 exclude = [
     'bootcamp/*',
