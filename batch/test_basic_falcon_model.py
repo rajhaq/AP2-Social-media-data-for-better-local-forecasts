@@ -1,4 +1,9 @@
-# Import necessary libraries
+# Description:
+# This file is designed for testing the basic functionality of the Falcon model when processing data in BATCH mode. The promt and Tweets are fixed.
+# Use:
+# Run the job for testing basic Falcon model
+# Example: srun apptainer run --nv /p/project/deepacf/maelstrom/haque1/apptainer_images/ap2falcon.sif python3 test_basic_falcon_model.py
+
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
 import torch
 
@@ -15,8 +20,10 @@ model = AutoModelForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 tokenizer.pad_token = tokenizer.eos_token
 
+
 def tokenize_prompt(prompt):
     return tokenizer.encode(prompt, return_tensors="pt").cuda()
+
 
 # Create a pipeline for text generation
 text_generation_pipeline = pipeline(
@@ -32,14 +39,14 @@ prompt = r"""
 Does the following sentence provide information on presence of rain?
 
 Tweets:
-Tweet 1: "The sound of rain tapping on the window" 
-Tweet 2: "Boris likes drinking water". 
-Tweet 3: "It is raining in London now". 
+Tweet 1: "The sound of rain tapping on the window"
+Tweet 2: "Boris likes drinking water".
+Tweet 3: "It is raining in London now"
 """
 
 example_output = """
 Return the results like this:
-{ "tweet": 1, "content": "The sound of rain tapping on the window", "score": 0.9 },  
+{ "tweet": 1, "content": "The sound of rain tapping on the window", "score": 0.9 },
 """
 input_ids = tokenize_prompt(prompt + example_output)
 sequences = model.generate(
@@ -55,7 +62,7 @@ sequences = model.generate(
 for i, sample_output in enumerate(sequences):
     prediction = tokenizer.decode(sample_output, skip_special_tokens=True)
     print(f"{prompt=}")
-    print(f"---------")
+    print("---------")
     print(f"prediction\n{prediction}")
 with open("dump_relevance.txt", "a") as fd:
-            fd.write(prediction)
+    fd.write(prediction)

@@ -1,4 +1,13 @@
-# Import necessary libraries
+# Description:
+# This file is intended for final testing of the Falcon model using entire dataset.
+# Use:
+# Run the job for testing basic Falcon model
+# Example: srun apptainer run --nv /p/project/deepacf/maelstrom/haque1/apptainer_images/ap2falcon.sif python3 test_basic_falcon_model.py
+# For final testing, change value of start_index=1, end_index=2000 (as the run hours are limited)
+# SBATCH --time=24:00:00, Adjust the time based on estimated requirements, as for 25k data we need around 160 hours, we can run same file with many batch to complete these hours
+# Example: srun apptainer run --nv /p/project/deepacf/maelstrom/haque1/apptainer_images/ap2falcon.sif python3 final_testing_file.py
+
+
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
 import torch
 import pandas as pd
@@ -50,24 +59,6 @@ Return the results in a json file like: [
 ]
 
 Result: [ { "tweet_number": 1, "content":"""
-# input_ids = tokenize_prompt(prompt + example_output)
-# sequences = model.generate(
-#     input_ids,
-#     temperature=0.7,
-#     # do_sample=True,
-#     max_length=300,
-#     # top_k=50,
-#     # top_p=0.95,
-#     # num_return_sequences=3
-# )
-# # Display the results
-# for i, sample_output in enumerate(sequences):
-#     prediction = tokenizer.decode(sample_output, skip_special_tokens=True)
-#     print(f"{prompt=}")
-#     print(f"---------")
-#     print(f"prediction\n{prediction}")
-# with open("dump_relevance.txt", "a") as fd:
-#             fd.write(prediction)
 
 
 # Function to process tweets in batches
@@ -106,7 +97,7 @@ def extract_valid_json_as_string(json_string):
     return ", ".join(valid_objects)
 
 
-def process_tweets(file_path, batch_size=10, max_tweets=10, start_index=1900, end_index=2000):
+def process_tweets(file_path, batch_size=10, start_index=1900, end_index=2000):
     # Read the tweets from the CSV file
     df = pd.read_csv(file_path)
     tweets = df["text"][start_index:end_index].tolist()  # Assuming  name is 'text'
