@@ -6,12 +6,14 @@
 # For final testing, change value of start_index=1, end_index=2000 (as the run hours are limited)
 # SBATCH --time=24:00:00, Adjust the time based on estimated requirements, as for 25k data we need around 160 hours, we can run same file with many batch to complete these hours
 # Example: srun apptainer run --nv /p/project/deepacf/maelstrom/haque1/apptainer_images/ap2falcon.sif python3 final_testing_file.py
-
-
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
-import torch
-import pandas as pd
 import json
+
+import pandas as pd
+import torch
+from transformers import AutoModelForCausalLM
+from transformers import AutoTokenizer
+from transformers import BitsAndBytesConfig
+from transformers import pipeline
 
 model_path = "/p/project/deepacf/maelstrom/ehlert1/models/falcon-40b"
 

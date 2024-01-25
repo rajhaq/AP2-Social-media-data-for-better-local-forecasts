@@ -1,7 +1,8 @@
-import transformers
-import sklearn.metrics
 import functools
 import os
+
+import sklearn.metrics
+import transformers
 
 
 def get_model(params, db_config_base, model_nm):

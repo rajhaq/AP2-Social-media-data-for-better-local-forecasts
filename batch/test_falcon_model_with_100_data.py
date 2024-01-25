@@ -4,10 +4,12 @@
 # For testing with 100 adjust max_tweets=100
 # use SBATCH --time=04:00:00, Adjust the time based on estimated requirements
 # Example: srun apptainer run --nv /p/project/deepacf/maelstrom/haque1/apptainer_images/ap2falcon.sif python3 test_falcon_model_with_100_data.py
-
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
-import torch
 import pandas as pd
+import torch
+from transformers import AutoModelForCausalLM
+from transformers import AutoTokenizer
+from transformers import BitsAndBytesConfig
+from transformers import pipeline
 
 
 model_path = "/p/project/deepacf/maelstrom/ehlert1/models/falcon-40b"

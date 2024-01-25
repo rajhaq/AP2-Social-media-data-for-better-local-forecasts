@@ -3,9 +3,11 @@
 # Use:
 # Run the job for testing basic Falcon model
 # Example: srun apptainer run --nv /p/project/deepacf/maelstrom/haque1/apptainer_images/ap2falcon.sif python3 test_basic_falcon_model.py
-
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
 import torch
+from transformers import AutoModelForCausalLM
+from transformers import AutoTokenizer
+from transformers import BitsAndBytesConfig
+from transformers import pipeline
 
 model_path = "/p/project/deepacf/maelstrom/ehlert1/models/falcon-40b"
 

@@ -1,4 +1,5 @@
 # Testing 'Hello World' file
+# Just use only to check BATCH
 import datetime
 
 # Get the current time

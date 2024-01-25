@@ -7,7 +7,6 @@ repos:
     hooks:
       - id: black
         language_version: python3.10
-        files: (a2|tests)
 
   - repo: https://github.com/ambv/black
     rev: 23.7.0
@@ -23,7 +22,7 @@ repos:
     rev: v3.10.0
     hooks:
       - id: reorder-python-imports
-        files: (a2|tests)
+        files: .
 
   - repo: https://github.com/jendrikseipp/vulture
     rev: v2.7
