@@ -1,5 +1,6 @@
-from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
+from sklearn.metrics import auc
+from sklearn.metrics import roc_curve
 
 
 def plot_roc_curve(
