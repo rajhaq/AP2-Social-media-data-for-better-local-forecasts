@@ -51,8 +51,13 @@ def fill_missing_scores(input_csv_file, output_csv_file):
         reader = csv.DictReader(csvfile)
         fieldnames = reader.fieldnames
 
-        data = [row for row in reader if row["score"] is not None]
+        data = []
+        for row in reader:
+            if not row["score"]:  # Skip rows where 'score' is missing
+                continue
+            data.append(row)
 
+    # Write the modified data to the new CSV file
     with open(output_csv_file, "w", newline="", encoding="utf-8") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -63,14 +68,19 @@ def fill_missing_scores(input_csv_file, output_csv_file):
 def add_relevance_column(input_csv_file, output_csv_file):
     with open(input_csv_file, "r", newline="", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
-        # Add 'relevance' to the field names
-        fieldnames = reader.fieldnames + ["relevance"]
+        fieldnames = reader.fieldnames + ["relevance"]  # Add 'relevance' to the field names
 
+        # Read data and add relevance based on score
         data = []
         for row in reader:
-            score = float(row["score"]) if row["score"] else 0.0
-            row["relevance"] = 1 if score > 0.5 else 0
-            data.append(row)
+            try:
+                # Attempt to convert score to float
+                score = float(row["score"]) if row["score"] else 0.0
+                row["relevance"] = 1 if score > 0.4 else 0
+                data.append(row)
+            except ValueError:
+                # Skip rows with non-convertible score values
+                continue
 
     # Write the modified data to the new CSV file
     with open(output_csv_file, "w", newline="", encoding="utf-8") as csvfile:
