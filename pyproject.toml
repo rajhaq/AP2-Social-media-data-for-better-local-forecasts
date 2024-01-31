@@ -29,7 +29,7 @@ line-length = 120
 
 [tool.vulture]
 min_confidence = 80
-paths = ['src/']
+paths = ['scripts/']
 exclude = [
     '**/cachedir/*',
     '**/.venv/*',
