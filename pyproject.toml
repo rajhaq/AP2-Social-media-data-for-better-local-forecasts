@@ -5,9 +5,14 @@ per-file-ignores = [
     "training_deep500.py:F403,F405",
     "training_performance.py:F403,F405",
     "scripts/relevance_dataset_generation/mlflow_projects/generate_relevance_labels.py:E501",
-    "batch/falcon_script_for_1month_dataset.py:E203", 
-    "batch/test_falcon_model_with_100_data.py:E203", 
-    "batch/test_basic_falcon_model.py:E203", 
+    "batch/falcon_script_for_1month_dataset.py:E203,E402", 
+    "batch/test_falcon_model_with_100_data.py:E203,E402", 
+    "batch/test_basic_falcon_model.py:E203,E402", 
+    "batch/1/falcon_script_for_5000_data.py:E203,E402", 
+    "batch/2/falcon_script_for_5000_data.py:E203,E402", 
+    "batch/3/falcon_script_for_5000_data.py:E203,E402", 
+    "batch/4/falcon_script_for_5000_data.py:E203,E402",
+    "scripts/extact_json.py:E203,E402",
 ]
 exclude = [
     'bootcamp/*',
@@ -24,7 +29,7 @@ line-length = 120
 
 [tool.vulture]
 min_confidence = 80
-paths = ['src/']
+paths = ['scripts/']
 exclude = [
     '**/cachedir/*',
     '**/.venv/*',
